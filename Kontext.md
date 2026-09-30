@@ -37,3 +37,9 @@ Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Bur
 Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter: <Burger King>
 Sollwert <Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
 </Testfälle>
+<Abbruchkriterium>
+Falls du versuchst einen Fehler zu beheben und 3 mal hintereinander daran scheiterst, zeige mir <git diff> und setzte dann mit <git restore> auf den letzten funktionierenden Commit zurück und frage mich bevor ein neuer Versuch startet.
+</Abbruchkriterium>
+<Meine Prüfpflicht>
+Ich werde bei jeder Änderung des Codes, bereits bestehende Testfälle aus <Kontext.md> erneut prüfen, unabhängig davon, ob der Agent Erfolg meldet.
+</Meine Prüfpflicht>
