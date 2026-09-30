@@ -4,14 +4,16 @@ Ein Ordner mit verschiedenen Dateien und Codes, welche für die Erstellung einer
 <Dateiübersicht>
 "Kontext.md": Kontext Datei für den Ordner
 "fastfood_testdaten.csv": Excel Tabelle mit 17 Beispielprodukten
-"fastfood_finder.html": Leere Datei in der zukünftig der Code hinzugefügt werden soll
+"fastfood_finder.html": Datei mit Array der Produkte und Funktion passendeProdukte()
 </Dateiübersicht>
 <Regeln>
 - Es wird die Kalorienanzahl, der Spielraum + und der Spielraum - eingegeben
--Ausgabe bei leere Eingabe oder ungültige Eingabe (keine Zahl): "Bitte eine gültige Kalorienzahl eingeben!", kein Ergebnis
+-Ausgabe bei leere Eingabe oder ungültige Eingabe (keine Zahl), (egal ob bei Kalorienzahl oder Spielraum): "Bitte eine gültige Kalorienzahl eingeben!", kein Ergebnis
 -Ausgabe, wenn die Kalorienzahl geringer als die Kalorienzahl des kalorienärmsten Produkts: "Deine Kalorienzahl ist zu gering!" , kein Ergebnis
 -Ausgabe falls die Kalorienzahl größer als das Kalorienärmste Produkt ist, der Spielraum aber zu klein für ein passendes Produkt: "Keine passenden Produkte gefunden, versuche einen größeren Spielraum!"
 -Ausgabe, wenn der Filter alle Ergebnisse wegfiltert: "Keine Produkte für diesen Filter gefunden!"
+- Ausgabe: Wenn Kalorienzahl + Spielraum exakt gleich dem Kalorienwert des Produktes ist: Produkt wird ausgegeben.
+- Ausgabe: Wenn Kalorienzahl - Spielraum exakt gleich dem Kalorienwert des Produktes ist: Produkt wird ausgegeben.
 </Regeln>
 <Testfälle>
 Eingabe: <490; 70; 0>
