@@ -30,7 +30,7 @@ Sollwert <Keine passenden Produkte gefunden, versuche einen größeren Spielraum
 Eingabe: <170; 0; 0>
 Sollwert <Cola (0,4 l), McDonald's ,170kcal, 0g P, 42g K, 0g F>
 Eingabe: <400; 0; 10>
-Sollwert <McChicken, McDonald's ,400kcal, 17g P, 40g K, 20g F; Original Recipe Chicken Breast, KFC, 390kcal, 33g P, 12g K, 24g F>
+Sollwert <Original Recipe Chicken Breast, KFC, 390kcal, 33g P, 12g K, 24g F; McChicken, McDonald's ,400kcal, 17g P, 40g K, 20g F>
 (Ab hier mit Sortierung und Filter)
 Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter: <kein Filter>
 Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
