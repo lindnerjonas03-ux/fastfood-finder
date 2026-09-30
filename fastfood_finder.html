@@ -53,6 +53,37 @@
     border-radius: 8px;
     padding: 12px;
   }
+    select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  .filter-box {
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  .filter-box legend { font-size: 0.9rem; padding: 0 4px; }
+  .kette {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .kette input {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+  }
 </style>
 </head>
 <body>
@@ -71,7 +102,18 @@
     <input id="minus" type="text" inputmode="decimal" placeholder="z. B. 0">
   </div>
 </div>
+<label for="sortierung">Sortierung</label>
+<select id="sortierung">
+  <option value="protein-ab" selected>Protein, absteigend</option>
+  <option value="protein-auf">Protein, aufsteigend</option>
+  <option value="kh-ab">Kohlenhydrate, absteigend</option>
+  <option value="kh-auf">Kohlenhydrate, aufsteigend</option>
+</select>
 
+<fieldset class="filter-box">
+  <legend>Ketten filtern</legend>
+  <div id="ketten"></div>
+</fieldset>
 <button id="suchen">Suchen</button>
 
 <div id="ergebnis"></div>
@@ -130,7 +172,33 @@ const eingabePlus = document.getElementById("plus");
 const eingabeMinus = document.getElementById("minus");
 const ergebnisBereich = document.getElementById("ergebnis");
 
+const sortierAuswahl = document.getElementById("sortierung");
+const kettenBereich = document.getElementById("ketten");
+let suchGestartet = false;
+
+// Kontrollkästchen aus den Ketten im Array erzeugen
+const alleKetten = [...new Set(produkte.map((p) => p.kette))];
+alleKetten.forEach((kette) => {
+  const label = document.createElement("label");
+  label.className = "kette";
+  const box = document.createElement("input");
+  box.type = "checkbox";
+  box.value = kette;
+  label.appendChild(box);
+  label.appendChild(document.createTextNode(kette));
+  kettenBereich.appendChild(label);
+});
+
+function zeigeFehler(text) {
+  const fehler = document.createElement("div");
+  fehler.className = "fehler";
+  fehler.textContent = text;
+  ergebnisBereich.appendChild(fehler);
+}
+
 function zeigeErgebnis() {
+  suchGestartet = true;
+
   const ergebnis = passendeProdukte(
     eingabeKalorien.value,
     eingabePlus.value,
@@ -141,15 +209,32 @@ function zeigeErgebnis() {
 
   // Fehlermeldung (Funktion gibt einen String zurück)
   if (typeof ergebnis === "string") {
-    const fehler = document.createElement("div");
-    fehler.className = "fehler";
-    fehler.textContent = ergebnis;
-    ergebnisBereich.appendChild(fehler);
+    zeigeFehler(ergebnis);
     return;
   }
 
-  // Trefferliste (Funktion gibt ein Array zurück)
-  ergebnis.forEach((p) => {
+  // Filter: nur angehakte Ketten (keine Auswahl = alle Ketten)
+  const gewaehlt = [...kettenBereich.querySelectorAll("input:checked")].map(
+    (b) => b.value
+  );
+  let liste = ergebnis;
+  if (gewaehlt.length > 0) {
+    liste = ergebnis.filter((p) => gewaehlt.includes(p.kette));
+  }
+
+  if (liste.length === 0) {
+    zeigeFehler("Keine Produkte für diesen Filter gefunden!");
+    return;
+  }
+
+  // Sortierung (Standard: Protein absteigend)
+  const [feld, richtung] = sortierAuswahl.value.split("-");
+  const schluessel = feld === "kh" ? "kh" : "protein";
+  const faktor = richtung === "auf" ? 1 : -1;
+  liste = [...liste].sort((a, b) => (a[schluessel] - b[schluessel]) * faktor);
+
+  // Trefferliste
+  liste.forEach((p) => {
     const karte = document.createElement("div");
     karte.className = "karte";
     karte.textContent =
@@ -159,6 +244,15 @@ function zeigeErgebnis() {
     ergebnisBereich.appendChild(karte);
   });
 }
+
+// Sofortige Aktualisierung bei Änderung von Sortierung oder Filter
+// (erst nachdem einmal gesucht wurde, damit vorher keine Fehlermeldung erscheint)
+sortierAuswahl.addEventListener("change", () => {
+  if (suchGestartet) zeigeErgebnis();
+});
+kettenBereich.addEventListener("change", () => {
+  if (suchGestartet) zeigeErgebnis();
+});
 
 document.getElementById("suchen").addEventListener("click", zeigeErgebnis);
 
