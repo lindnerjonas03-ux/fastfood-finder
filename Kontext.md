@@ -1,5 +1,5 @@
 <Ziel>
-Ein Ordner mit verschiedenen Dateien und Codes, welche für die Erstellung einer Web-Seite (Kernversion) notwendig sind. In der Kernversion Web-Seite werden Kalorien mit Spielraum eingegeben. Danach werden passende Produkte aus meiner Liste ausgeben. Sortierbar nach Protein und Kohlenhydrate. Außerdem kann man nach Fast-Food-Ketten filtern. Dafür soll aus einer Liste ausgewählt werden können welche Ketten erwünscht sind. Die App wird im Browser auf dem Smartphone verwendet.
+Ein Ordner mit verschiedenen Dateien und Codes, welche für die Erstellung einer Web-Seite (Kernversion) notwendig sind. In der Kernversion Web-Seite werden Kalorien mit Spielraum eingegeben. Danach werden passende Produkte aus meiner Liste ausgeben. Der Benutzer soll auswählen können, ob nach Protein oder Kohlenhydrate, aufsteigend oder absteigend sortiert werden soll. Dabei soll ein Auswahlfeld verwendet werden. Außerdem soll man nach Fast-Food-Ketten filtern können. Dafür soll aus einer Auswahlliste durch klicken auf ein Kontrollkästchen ausgewählt werden können welche Ketten erwünscht sind. Die App wird im Browser auf dem Smartphone verwendet.
 </Ziel>
 <Dateiübersicht>
 "Kontext.md": Kontext Datei für den Ordner
@@ -15,7 +15,9 @@ Ein Ordner mit verschiedenen Dateien und Codes, welche für die Erstellung einer
 - Ausgabe: Wenn Kalorienzahl + Spielraum exakt gleich dem Kalorienwert des Produktes ist: Produkt wird ausgegeben.
 - Ausgabe: Wenn Kalorienzahl - Spielraum exakt gleich dem Kalorienwert des Produktes ist: Produkt wird ausgegeben.
 - Ausgabe: Wenn Kalorienzahl exakt gleich dem kalorienärmsten Produktes ist: Produkt wird ausgegeben.
-</Regeln>
+-Keine Auswahl der Sortierung: Standard-Reihenfolge nach Proteine absteigend sortiert
+-Wenn keine Auswahl im Filter ausgewählt wurde: Alle Ergebnis aus allen Ketten soll angezeigt werden
+</Regeln> 
 <Testfälle>
 Eingabe: <490; 70; 0>
 Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
@@ -29,4 +31,9 @@ Eingabe: <170; 0; 0>
 Sollwert <Cola (0,4 l), McDonald's ,170kcal, 0g P, 42g K, 0g F>
 Eingabe: <400; 0; 10>
 Sollwert <McChicken, McDonald's ,400kcal, 17g P, 40g K, 20g F; Original Recipe Chicken Breast, KFC, 390kcal, 33g P, 12g K, 24g F>
+(Ab hier mit Sortierung und Filter)
+Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter: <kein Filter>
+Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
+Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter: <Burger King>
+Sollwert <Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
 </Testfälle>
