@@ -39,8 +39,10 @@ Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter: <kein Filte
 Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
 Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter: <Burger King>
 Sollwert <Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
-Eingabe: <490; 70; 0> Sortierung: <nach Kalorien, aufsteigend> Filter: <kein Filter>
-Sollwert <Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F; Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F>
+Eingabe: <490; 70; 10> Sortierung: <nach Kalorien, aufsteigend> Filter: <kein Filter>
+Sollwert <Zinger Burger, KFC, 480kcal, 24g P, 42g K, 24g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F; Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F>
+Eingabe: <490; 70; 10> Sortierung: <nach Kalorien, absteigend> Filter: <kein Filter>
+Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F; Zinger Burger, KFC, 480kcal, 24g P, 42g K, 24g F>
 </Testfälle>
 <Abbruchkriterium>
 Stoppe jeden weiteren Versuch wenn: Derselbe Testfall schlägt beim dritten Versuch in Folge fehl
