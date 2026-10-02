@@ -6,6 +6,7 @@ Ein Ordner mit verschiedenen Dateien und Codes, welche für die Erstellung einer
 "Kontext.md": Kontext Datei für den Ordner
 "fastfood_testdaten.csv": Excel Tabelle mit 17 Beispielprodukten
 "fastfood_finder.html": Datei mit Array der Produkte, Funktion passendeProdukte() und Oberfläche
+"produkte.js": enthält das komplette Produktarray (const produkte = [...]), recherchierte echte Nährwertdaten. Wird in fastfood_finder.html per <script src="produkte.js"></script> eingebunden, VOR dem Haupt-Script-Block, da produkte dort sofort verwendet wird (Checkbox-Erzeugung).
 </Dateiübersicht>
 <Regeln>
 - Es wird die Kalorienanzahl, der Spielraum + und der Spielraum - eingegeben
@@ -26,6 +27,11 @@ Beispiele:
 - Dessert-Filter wird vor der Sortierung und vor der Kombinationssuche angewendet
 - Ergibt der Dessert-Filter zusammen mit dem Ketten-Filter keine Treffer: "Keine Produkte für diesen Filter gefunden!" (bestehende Regel, gilt auch hier)
 -Standardmäßig soll für den zweiten Filter (Alle Produkte/Dessert/kein Dessert) auf <Alle Produkte> eingestellt sein
+- Produktdaten liegen in einer eigenen Datei (produkte.js), nicht mehr inline in fastfood_finder.html
+- Umfang pro Kette: einzelne Hauptprodukte, Beilagen, alle Dessert-Produkte
+- Ausgeschlossen: Getränke, Menüs/Kombi-Pakete (mehrere Produkte als ein Posten)
+- Nährwerte sind offizielle Herstellerangaben pro Portion (nicht pro 100 g), mit Quellenangabe pro Produkt für die Stichprobenprüfung
+- Stichprobenprüfung vor Commit: mindestens 2 Produkte pro Kette (bei 5 Ketten: 10 insgesamt) werden gegen die genannte Quelle geprüft
 </Regeln> 
 <Testfälle>
 Eingabe: <490; 70; 0>
