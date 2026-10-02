@@ -59,16 +59,10 @@ Kombinationen:
 <Cheeseburger, McDonald's ,320kcal, 16g P, 33g K, 14g F + Cola (0,4 l), McDonald's ,170kcal, 0g P, 42g K, 0g F>
 Eingabe: <490; 70; 0> Sortierung: <nach Kalorien, absteigend> Filter1: <Burger King> Filter2: <kein Dessert>
 Sollwert <Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
-Kombinationen:
-<Kein passende Kombination gefunden>
 Eingabe: <490; 70; 0> Sortierung: <nach Kalorien, absteigend> Filter1: <Burger King> Filter2: <Dessert>
 Sollwert <Keine Produkte für diesen Filter gefunden!>
-Kombinationen:
-<Keine passende Kombination gefunden>
 Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter1: <Burger King> Filter2: <Dessert>
 Sollwert <Keine Produkte für diesen Filter gefunden!>
-Kombinationen:
-<Keine passende Kombination gefunden>
 </Testfälle>
 <Abbruchkriterium>
 Stoppe jeden weiteren Versuch wenn: Derselbe Testfall schlägt beim dritten Versuch in Folge fehl
