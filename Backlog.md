@@ -13,7 +13,6 @@ In der Ausgabe soll auch ein Feld mit Produktkombinationen erscheinen in der die
 -Keine Auswahl der Sortierung: Standard-Reihenfolge nach Kalorien absteigend sortiert
 -Ob ein Produkt Dessert oder kein Dessert ist wird von der KI entschieden und wird beim Anliegen jedes Produktes festgelegt (wie <kcal>)
 -Bei falscher Entscheidung ob Dessert oder kein Dessert kann ich manuell die Produktangaben ändern.
--Standardmäßig soll für den zweiten Filter (Alle Produkte/Dessert/kein Dessert) auf <Alle Produkte> eingestellt sein
 -Bei den Produktkombinationen müssen alle Produkte von der selben Kette sein
 -Bei Produktkombinationen werden mindestens 2 und maximal 3 Produkte ausgegeben
 -Bei Produktkombinationen ist der Spielraum genauso relevant
