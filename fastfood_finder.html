@@ -104,7 +104,9 @@
 </div>
 <label for="sortierung">Sortierung</label>
 <select id="sortierung">
-  <option value="protein-ab" selected>Protein, absteigend</option>
+  <option value="kcal-ab" selected>Kalorien, absteigend</option>
+  <option value="kcal-auf">Kalorien, aufsteigend</option>
+  <option value="protein-ab">Protein, absteigend</option>
   <option value="protein-auf">Protein, aufsteigend</option>
   <option value="kh-ab">Kohlenhydrate, absteigend</option>
   <option value="kh-auf">Kohlenhydrate, aufsteigend</option>
@@ -227,9 +229,9 @@ function zeigeErgebnis() {
     return;
   }
 
-  // Sortierung (Standard: Protein absteigend)
+  // Sortierung (Standard: Kalorien absteigend)
   const [feld, richtung] = sortierAuswahl.value.split("-");
-  const schluessel = feld === "kh" ? "kh" : "protein";
+  const schluessel = ["kh", "protein"].includes(feld) ? feld : "kcal";
   const faktor = richtung === "auf" ? 1 : -1;
   liste = [...liste].sort((a, b) => (a[schluessel] - b[schluessel]) * faktor);
 
