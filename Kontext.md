@@ -63,6 +63,10 @@ Eingabe: <490; 70; 0> Sortierung: <nach Kalorien, absteigend> Filter1: <Burger K
 Sollwert <Keine Produkte für diesen Filter gefunden!>
 Eingabe: <490; 70; 0> Sortierung: <nach Protein, absteigend> Filter1: <Burger King> Filter2: <Dessert>
 Sollwert <Keine Produkte für diesen Filter gefunden!>
+Eingabe: <220; 0; 0> Sortierung: <nach Protein, absteigend> Filter1: <kein Filter> Filter2: <Dessert>
+Sollwert <Glazed Donut, Dunkin' Donuts, 220kcal, 3g P, 27g K, 11g F>
+Eingabe: <220; 0; 0> Sortierung: <nach Protein, absteigend> Filter1: <kein Filter> Filter2: <kein Dessert>
+Sollwert <Keine Produkte für diesen Filter gefunden!>
 </Testfälle>
 <Abbruchkriterium>
 Stoppe jeden weiteren Versuch wenn: Derselbe Testfall schlägt beim dritten Versuch in Folge fehl
