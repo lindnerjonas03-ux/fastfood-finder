@@ -5,7 +5,7 @@ Ein Ordner mit verschiedenen Dateien und Codes, welche für die Erstellung einer
 "Backlog.md": Text mit zukünftigen Änderungen
 "Kontext.md": Kontext Datei für den Ordner
 "fastfood_testdaten.csv": Excel Tabelle mit 17 Beispielprodukten
-"fastfood_finder.html": Datei mit Array der Produkte, Funktion passendeProdukte() und Oberfläche
+"fastfood_finder.html": Funktion passendeProdukte() und Oberfläche
 "produkte.js": enthält das komplette Produktarray (const produkte = [...]), recherchierte echte Nährwertdaten. Wird in fastfood_finder.html per <script src="produkte.js"></script> eingebunden, VOR dem Haupt-Script-Block, da produkte dort sofort verwendet wird (Checkbox-Erzeugung).
 </Dateiübersicht>
 <Regeln>
@@ -32,8 +32,10 @@ Beispiele:
 - Ausgeschlossen: Getränke, Menüs/Kombi-Pakete (mehrere Produkte als ein Posten)
 - Nährwerte sind offizielle Herstellerangaben pro Portion (nicht pro 100 g), mit Quellenangabe pro Produkt für die Stichprobenprüfung
 - Stichprobenprüfung vor Commit: mindestens 2 Produkte pro Kette (bei 5 Ketten: 10 insgesamt) werden gegen die genannte Quelle geprüft
+- KFC: offizielle Seite bietet keine Nährwerttabelle, daher Drittquelle <https://kfcmenupreise.de/kfc-kalorien-liste/> verwendet
 </Regeln> 
 <Testfälle>
+(Alle Testfälle mit Beispielprodukten, keine echten Angaben)
 Eingabe: <490; 70; 0>
 Sollwert <Big Mac, McDonald's ,550kcal, 25g P, 45g K, 30g F; Chicken Royale, Burger King, 500kcal, 22g P, 44g K, 26g F>
 Eingabe: <abc; 100; 0>

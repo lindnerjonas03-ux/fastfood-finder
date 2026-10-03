@@ -126,26 +126,8 @@
 <button id="suchen">Suchen</button>
 
 <div id="ergebnis"></div>
+    <script src="produkte.js"></script>
     <script>
-        const produkte = [
-{ name: "Cheeseburger", kette: "McDonald's", kcal: 320, protein: 16, kh: 33, fett: 14, dessert: false },
-  { name: "Big Mac", kette: "McDonald's", kcal: 550, protein: 25, kh: 45, fett: 30, dessert: false },
-  { name: "McChicken", kette: "McDonald's", kcal: 400, protein: 17, kh: 40, fett: 20, dessert: false },
-  { name: "Whopper", kette: "Burger King", kcal: 630, protein: 28, kh: 49, fett: 36, dessert: false },
-  { name: "Chicken Royale", kette: "Burger King", kcal: 500, protein: 22, kh: 44, fett: 26, dessert: false },
-  { name: "Long Chicken", kette: "Burger King", kcal: 460, protein: 24, kh: 42, fett: 22, dessert: false },
-  { name: "Chicken Sub (Footlong)", kette: "Subway", kcal: 620, protein: 40, kh: 70, fett: 16, dessert: false },
-  { name: "Veggie Delite (Footlong)", kette: "Subway", kcal: 380, protein: 15, kh: 60, fett: 6, dessert: false },
-  { name: "Thunfisch Sub (15 cm)", kette: "Subway", kcal: 350, protein: 18, kh: 38, fett: 14, dessert: false },
-  { name: "Original Recipe Chicken Breast", kette: "KFC", kcal: 390, protein: 33, kh: 12, fett: 24, dessert: false },
-  { name: "Zinger Burger", kette: "KFC", kcal: 480, protein: 24, kh: 42, fett: 24, dessert: false },
-  { name: "Hot Wings (3 Stück)", kette: "KFC", kcal: 260, protein: 18, kh: 8, fett: 17, dessert: false },
-  { name: "Bacon Egg Cheese Sandwich", kette: "Dunkin' Donuts", kcal: 470, protein: 21, kh: 38, fett: 26, dessert: false },
-  { name: "Glazed Donut", kette: "Dunkin' Donuts", kcal: 220, protein: 3, kh: 27, fett: 11, dessert: true },
-  { name: "Wrap Chicken Caesar", kette: "Dunkin' Donuts", kcal: 410, protein: 22, kh: 35, fett: 20, dessert: false },
-  { name: "Pommes (mittel)", kette: "McDonald's", kcal: 330, protein: 4, kh: 42, fett: 16, dessert: false },
-  { name: "Cola (0,4 l)", kette: "McDonald's", kcal: 170, protein: 0, kh: 42, fett: 0, dessert: false },
-];
         function passendeProdukte(kalorien, spielraumPlus, spielraumMinus) {
   const zahl = (wert) => {
     if (wert === null || wert === undefined) return NaN;
